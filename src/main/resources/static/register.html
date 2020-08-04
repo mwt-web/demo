@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>登录</title>
+</head>
+<body>
+<div class="container">
+    <form action="/api/user/register" method="post" >
+        <div >
+            <h2 class="col-sm-offset-5 col-sm-4">用户注册</h2>
+        </div>
+        <div >
+            <label for="username" >用户名：</label>
+            <div>
+                <input type="text"  id="username" name="username" placeholder="请输入用户名" />
+            </div>
+        </div>
+        <div >
+            <label for="password" >密码：</label>
+            <div>
+                <input type="password"  id="password" name="password" placeholder="请输入密码" />
+            </div>
+        </div>
+        <div >
+            <label for="tel" >手机号码：</label>
+            <div >
+                <input type="text"  id="tel" name="tel" placeholder="请输入手机号码" />
+            </div>
+        </div>
+        <div >
+            <label for="email" >email：</label>
+            <div >
+                <input type="text"  id="email" name="email" placeholder="请输入email" />
+            </div>
+        </div>
+        <div >
+            <label for="company" >公司名称：</label>
+            <div >
+                <input type="text"  id="company" name="company" placeholder="请输入公司名称" />
+            </div>
+        </div>
+        <div >
+            <label for="department" >所在部门：</label>
+            <div >
+                <input type="text"  id="department" name="department" placeholder="请输入所在部门" />
+            </div>
+        </div>
+        <div >
+            <label for="mainBusiness" >主营方向：</label>
+            <div >
+                <input type="text"  id="mainBusiness" name="mainBusiness" placeholder="请输入主营方向" />
+            </div>
+        </div>
+        <div >
+            <label for="role" >用户身份：</label>
+            <div >
+                <input type="text"  id="role" name="role" placeholder="请输入用户身份" />
+            </div>
+        </div>
+        <div >
+            <div>
+                <button type="submit" >提交注册</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
