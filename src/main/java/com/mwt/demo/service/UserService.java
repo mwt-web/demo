@@ -1,7 +1,8 @@
-package com.example.demo.service;
+package com.mwt.demo.service;
 
 
-import com.example.demo.entity.User;
+import com.mwt.demo.config.AjaxResult;
+import com.mwt.demo.entity.User;
 
 import java.util.List;
 
@@ -12,10 +13,10 @@ import java.util.List;
 public interface UserService {
     /**
      * 登录
-     * @param username，password
+     * @param user
      * @return
      */
-    public User login(String username, String password);
+    AjaxResult login(User user);
 
     /**
      * 注册
@@ -23,7 +24,7 @@ public interface UserService {
      * @param user
      * @return
      */
-    public boolean register(User user);
+    AjaxResult register(User user);
 
 
     List<User> findUserInfo();

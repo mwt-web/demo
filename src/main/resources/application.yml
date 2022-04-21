@@ -12,11 +12,11 @@ spring:
     mode: HTML
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: xlj123
-    url: jdbc:mysql://116.85.36.55:3306/learn?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
-    username: root
+    password: 1214
+    url: jdbc:mysql://192.168.3.195:3306/learn?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: muwentao
 mybatis:
-  type-aliases-package: com.example.demo.entity
+  type-aliases-package: com.mwt.demo.entity
   config-location: classpath:/mybatis/mybatis-config.xml
   mapper-locations: classpath:/mybatis/mapper/*.xml
 
@@ -29,7 +29,7 @@ server:
     min-spare-threads: 25
     max-threads: 300
     accept-count: 200
-  port: 8080
+  port: 8081
 com:
   mwt:
     title: mwt
