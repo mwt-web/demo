@@ -1,19 +1,20 @@
 package com.mwt.demo.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.mwt.demo.config.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 /**
  * 用户的实体类,实现了序列化接口
+ * @author muwentao
  */
 @Data
-public class User extends BaseEntity {
+public class SysUser extends BaseEntity {
     /**
      * id
      */
+    @TableId
     private String id;
     /**
      * 用户名

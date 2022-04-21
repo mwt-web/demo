@@ -2,12 +2,14 @@ package com.mwt.demo.controller;
 
 
 import com.mwt.demo.config.AjaxResult;
-import com.mwt.demo.entity.User;
+import com.mwt.demo.entity.SysUser;
 import com.mwt.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -20,18 +22,18 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/findAll")
-    public List<User> getUserInfo(){
-        List<User> list=userService.findUserInfo();
+    public List<SysUser> getSysUserInfo(){
+        List<SysUser> list=userService.findUserInfo();
         return list;
     }
 
     @PostMapping(value = "/login")
-    public AjaxResult login(@RequestBody User user){
-        return userService.login(user);
+    public AjaxResult login(@RequestBody SysUser SysUser){
+        return userService.login(SysUser);
     }
 
     @PostMapping("/register")
-    public AjaxResult register(User user){
-        return userService.register(user);
+    public AjaxResult register(SysUser SysUser){
+        return userService.register(SysUser);
     }
 }

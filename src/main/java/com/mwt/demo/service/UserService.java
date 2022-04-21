@@ -1,8 +1,9 @@
 package com.mwt.demo.service;
 
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.mwt.demo.config.AjaxResult;
-import com.mwt.demo.entity.User;
+import com.mwt.demo.entity.SysUser;
 
 import java.util.List;
 
@@ -10,13 +11,13 @@ import java.util.List;
  * 用户服务层借口
  */
 
-public interface UserService {
+public interface UserService extends IService<SysUser> {
     /**
      * 登录
      * @param user
      * @return
      */
-    AjaxResult login(User user);
+    AjaxResult login(SysUser user);
 
     /**
      * 注册
@@ -24,8 +25,8 @@ public interface UserService {
      * @param user
      * @return
      */
-    AjaxResult register(User user);
+    AjaxResult register(SysUser user);
 
 
-    List<User> findUserInfo();
+    List<SysUser> findUserInfo();
 }
