@@ -16,12 +16,12 @@
 
     <!--，查询所有信息，查询一组集合，返回一个集合-->
     <select id="findUserInfo" resultMap="SysUserResult">
-        select * from sys_SysUser;
+        select * from sys_user;
      </select>
 
     <!--查询单个实体，登录查询，根据用户名和密码-->
     <select id="login" parameterType="com.mwt.demo.entity.SysUser" resultMap="SysUserResult">
-        select * from sys_SysUser where username=#{username} and password=#{password};
+        select * from sys_user where username=#{username} and password=#{password};
     </select>
 
     <!--插入注册信息-->

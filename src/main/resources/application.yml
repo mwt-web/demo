@@ -17,12 +17,9 @@ spring:
     username: muwentao
 # MyBatis配置
 mybatis-plus:
-  # 搜索指定包别名
-  typeAliasesPackage: com.mwt.demo.entity
-  # 配置mapper的扫描，找到所有的mapper.xml映射文件
-  mapperLocations: classpath*:*/mapper/SysUserMapper.xml
-  # 加载全局的配置文件
-  configLocation: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.mwt.demo.entity
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
 
 
 
