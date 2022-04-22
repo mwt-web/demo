@@ -2,6 +2,7 @@ package com.mwt.demo.entity;
 
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.mwt.demo.config.BaseEntity;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import lombok.Data;
  * @author muwentao
  */
 @Data
+@TableName("sys_user")
 public class SysUser extends BaseEntity {
     /**
      * id
