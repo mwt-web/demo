@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mwt.demo.mapper.UserMapper">
 
-    <resultMap id="SysUserResult" type="com.mwt.demo.entity.SysUser" >
+    <resultMap id="SysUserResult" type="com.mwt.demo.entity.SysUser">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
@@ -13,20 +13,46 @@
         <result column="role" property="role" jdbcType="VARCHAR"></result>
         <result column="tel" property="tel" jdbcType="BIGINT"></result>
     </resultMap>
-
+    <sql id="selectVo">
+        select id,
+               username,
+               password,
+               tel,
+               email,
+               company,
+               department,
+               main_business,
+               role,
+               create_time,
+               create_by,
+               update_time,
+               update_by,
+               remark,
+               del
+        from sys_user
+    </sql>
     <!--，查询所有信息，查询一组集合，返回一个集合-->
     <select id="findUserInfo" resultMap="SysUserResult">
-        select * from sys_user;
-     </select>
+        <include refid="selectVo"></include>
+    </select>
 
     <!--查询单个实体，登录查询，根据用户名和密码-->
     <select id="login" parameterType="com.mwt.demo.entity.SysUser" resultMap="SysUserResult">
-        select * from sys_user where username=#{username} and password=#{password};
+        <include refid="selectVo"></include>
+        <where>
+            <if test="username!=null and username!=''">
+                and username=#{username}
+            </if>
+            <if test="username!=null and username!=''">
+                and password=#{password}
+            </if>
+        </where>
     </select>
 
     <!--插入注册信息-->
     <insert id="register" parameterType="com.mwt.demo.entity.SysUser">
-        insert into sys_user(username,password,tel,email,company,department,main_business,role) values (#{username},#{password},#{tel},#{email},#{company},#{department},#{mainBusiness},#{role})
+        insert into sys_user(username, password, tel, email, company, department, main_business, role)
+        values (#{username}, #{password}, #{tel}, #{email}, #{company}, #{department}, #{mainBusiness}, #{role})
     </insert>
 
 </mapper>

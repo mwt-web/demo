@@ -1,12 +1,12 @@
 package com.mwt.demo.config;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -21,6 +21,7 @@ public class BaseEntity implements Serializable {
     /**
      * 搜索值
      */
+    @TableField(exist = false)
     private String searchValue;
 
     /**
@@ -54,17 +55,20 @@ public class BaseEntity implements Serializable {
      * 开始时间
      */
     @JsonIgnore
+    @TableField(exist = false)
     private String beginTime;
 
     /**
      * 结束时间
      */
     @JsonIgnore
+    @TableField(exist = false)
     private String endTime;
 
     /**
      * 请求参数
      */
+    @TableField(exist = false)
     private Map<String, Object> params;
 
 }

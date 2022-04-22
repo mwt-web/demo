@@ -45,7 +45,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,SysUser> implements 
             List<SysUser> list = userMapper.selectList(qw);
             if(ObjectUtils.isNotEmpty(list)){
                 log.info("{}",list);
-                AjaxResult.error("用户已存在");
+                return AjaxResult.error("用户已存在");
             }
             int row = userMapper.register(user);
             if (row > 0) {
