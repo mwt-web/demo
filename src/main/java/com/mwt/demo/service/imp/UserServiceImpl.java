@@ -12,7 +12,6 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,7 +59,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,SysUser> implements 
     public List<SysUser> findUserInfo() {
         return userMapper.findUserInfo();
     }
-
+/*
     public void standardApply(List<BusinessInvoiceSlipVO> invoiceDetailsList) {
         for (BusinessInvoiceSlipVO slipVO:
                 invoiceDetailsList) {
@@ -152,5 +151,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,SysUser> implements 
                 log.info("红字信息表开具异常：",e.getMessage());
             }
         }
-    }
+    }*/
 }
