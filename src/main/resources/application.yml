@@ -13,7 +13,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 1214
-    url: jdbc:mysql://192.168.3.195:3306/learn?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://192.168.112.138:3306/learn?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: muwentao
 # MyBatis配置
 mybatis-plus:
